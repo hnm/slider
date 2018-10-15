@@ -1,0 +1,437 @@
+{
+    "scripts": {
+        "slider-slider": {
+            "type": "entity",
+            "label": "Slider",
+            "pluralLabel": "Slider",
+            "typeChangeMode": null,
+            "entity": "slider\\bo\\Slider",
+            "dataSourceName": "default",
+            "historySaved": 0,
+            "knownStringPattern": "{name}[{id}]",
+            "defaultSort": [],
+            "previewControllerClassName": null,
+            "fields": {
+                "id": {
+                    "class": "rocket\\script\\entity\\field\\impl\\numeric\\IdScriptField",
+                    "label": "Id",
+                    "props": {
+                        "maxlength": null,
+                        "unsigned": false,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": true,
+                        "optional": false,
+                        "translation": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": true,
+                        "draft": false,
+                        "minValue": null,
+                        "maxValue": null
+                    },
+                    "property": "id",
+                    "entityProperty": "id"
+                },
+                "name": {
+                    "class": "rocket\\script\\entity\\field\\impl\\string\\StringScriptField",
+                    "label": "Name",
+                    "props": {
+                        "maxlength": null,
+                        "multiline": false,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": false,
+                        "translation": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": true,
+                        "draft": false
+                    },
+                    "property": "name",
+                    "entityProperty": "name"
+                },
+                "online": {
+                    "class": "rocket\\script\\entity\\field\\impl\\bool\\OnlineScriptField",
+                    "label": "Online Status",
+                    "props": {
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": false,
+                        "translation": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "draft": false
+                    },
+                    "property": "online",
+                    "entityProperty": "online"
+                },
+                "lastMod": {
+                    "class": "rocket\\script\\entity\\field\\impl\\date\\LastModScriptField",
+                    "label": "Last Mod",
+                    "props": {
+                        "readOnly": false,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": false,
+                        "draft": false,
+                        "translation": false,
+                        "dateStyle": "medium",
+                        "timeStyle": "short"
+                    },
+                    "property": "lastMod",
+                    "entityProperty": "lastMod"
+                },
+                "images": {
+                    "class": "rocket\\script\\entity\\field\\impl\\relation\\OneToManyScriptField",
+                    "label": "Bilder",
+                    "props": {
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": false,
+                        "helpText": null,
+                        "readOnly": true,
+                        "required": false,
+                        "embeddedAddEnabled": false,
+                        "draft": false,
+                        "translation": false,
+                        "targetMaskId": null,
+                        "filtered": true,
+                        "min": null,
+                        "max": null
+                    },
+                    "property": "images",
+                    "entityProperty": "images"
+                }
+            },
+            "commands": {
+                "overview": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\ListScriptCommand",
+                    "props": {
+                        "numEntries": "30"
+                    }
+                },
+                "rocket-add": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\AddScriptCommand",
+                    "props": []
+                },
+                "detail": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\DetailScriptCommand",
+                    "props": []
+                },
+                "edit": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\EditScriptCommand",
+                    "props": []
+                },
+                "delete": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\DeleteScriptCommand",
+                    "props": []
+                }
+            },
+            "constraints": [],
+            "listeners": [],
+            "defaultMaskId": null
+        },
+        "slider-slider-image": {
+            "type": "entity",
+            "label": "Slider Image",
+            "pluralLabel": "Slider Image",
+            "typeChangeMode": null,
+            "entity": "slider\\bo\\SliderImage",
+            "dataSourceName": "default",
+            "historySaved": 0,
+            "knownStringPattern": "{title}[{id}]",
+            "defaultSort": {
+                "orderIndex": "ASC"
+            },
+            "previewControllerClassName": null,
+            "fields": {
+                "id": {
+                    "class": "rocket\\script\\entity\\field\\impl\\numeric\\IntegerScriptField",
+                    "label": "Id",
+                    "props": {
+                        "maxlength": null,
+                        "unsigned": false,
+                        "displayInListView": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": true,
+                        "optional": false,
+                        "translation": false,
+                        "draft": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": true,
+                        "minValue": "0",
+                        "maxValue": null
+                    },
+                    "property": "id",
+                    "entityProperty": "id"
+                },
+                "slider": {
+                    "class": "rocket\\script\\entity\\field\\impl\\relation\\ManyToOneScriptField",
+                    "label": "Slider",
+                    "props": {
+                        "filtered": true,
+                        "displayInListView": false,
+                        "displayInDetailView": false,
+                        "displayInEditView": false,
+                        "readOnly": false,
+                        "optional": false,
+                        "displayInAddView": false,
+                        "helpText": null,
+                        "required": true,
+                        "embeddedAddEnabled": false
+                    },
+                    "property": "slider",
+                    "entityProperty": "slider"
+                },
+                "title": {
+                    "class": "rocket\\script\\entity\\field\\impl\\string\\StringScriptField",
+                    "label": "Titel",
+                    "props": {
+                        "maxlength": "128",
+                        "multiline": false,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": true,
+                        "translation": false,
+                        "draft": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": false
+                    },
+                    "property": "title",
+                    "entityProperty": "title"
+                },
+                "text": {
+                    "class": "rocket\\script\\entity\\field\\impl\\string\\StringScriptField",
+                    "label": "Beschreibung",
+                    "props": {
+                        "maxlength": "500",
+                        "multiline": true,
+                        "displayInListView": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": true,
+                        "translation": false,
+                        "draft": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": false
+                    },
+                    "property": "text",
+                    "entityProperty": "text"
+                },
+                "image": {
+                    "class": "rocket\\script\\entity\\field\\impl\\file\\FileScriptField",
+                    "label": "Bild",
+                    "props": {
+                        "allowedExtensions": [
+                            "jpg",
+                            "png",
+                            "jpeg"
+                        ],
+                        "thumbDimensions": [
+                            "1134x314xtrue"
+                        ],
+                        "checkImageResourceMemory": true,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": false,
+                        "translation": false,
+                        "draft": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": true
+                    },
+                    "property": "image",
+                    "entityProperty": "image"
+                },
+                "linkType": {
+                    "class": "page\\rocket\\script\\field\\LinkTypeScriptField",
+                    "label": "Link Typ",
+                    "props": {
+                        "readOnly": false,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "optional": false,
+                        "draft": false,
+                        "translation": false,
+                        "options": [
+                            {
+                                "value": "internal",
+                                "label": "Interner Link (Page)"
+                            },
+                            {
+                                "value": "external",
+                                "label": "Externer Link"
+                            }
+                        ],
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "noValueAllowed": true,
+                        "pageScriptField": "linkedPage",
+                        "linkScriptField": "linkExt",
+                        "hideFieldsIfTypeNone": [
+                            "linkLabel"
+                        ]
+                    },
+                    "property": null,
+                    "entityProperty": null
+                },
+                "linkExt": {
+                    "class": "rocket\\script\\entity\\field\\impl\\string\\LinkScriptField",
+                    "label": "externer Link",
+                    "props": {
+                        "maxlength": "255",
+                        "displayInListView": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": true,
+                        "translation": false,
+                        "draft": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": false
+                    },
+                    "property": "linkExt",
+                    "entityProperty": "linkExt"
+                },
+                "linkedPage": {
+                    "class": "rocket\\script\\entity\\field\\impl\\relation\\ManyToOneScriptField",
+                    "label": "verlinkte Seite",
+                    "props": {
+                        "readOnly": false,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "optional": true,
+                        "filtered": true,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": false,
+                        "embeddedAddEnabled": false
+                    },
+                    "property": "linkedPage",
+                    "entityProperty": "linkedPage"
+                },
+                "linkLabel": {
+                    "class": "rocket\\script\\entity\\field\\impl\\string\\StringScriptField",
+                    "label": "Link Label",
+                    "props": {
+                        "maxlength": "255",
+                        "multiline": false,
+                        "displayInListView": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": true,
+                        "translation": false,
+                        "draft": false,
+                        "displayInAddView": true,
+                        "helpText": null,
+                        "required": false
+                    },
+                    "property": "linkLabel",
+                    "entityProperty": "linkLabel"
+                },
+                "orderIndex": {
+                    "class": "rocket\\script\\entity\\field\\impl\\numeric\\OrderScriptField",
+                    "label": "Sortierreihenfolge",
+                    "props": {
+                        "displayInListView": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": false,
+                        "readOnly": false,
+                        "optional": true,
+                        "draft": false,
+                        "translation": false,
+                        "maxlength": null,
+                        "unsigned": false,
+                        "reference": "slider",
+                        "displayInAddView": false,
+                        "helpText": null
+                    },
+                    "property": "orderIndex",
+                    "entityProperty": "orderIndex"
+                },
+                "online": {
+                    "class": "rocket\\script\\entity\\field\\impl\\bool\\OnlineScriptField",
+                    "label": "Online Status",
+                    "props": {
+                        "displayInListView": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "readOnly": false,
+                        "optional": false,
+                        "translation": false,
+                        "draft": false,
+                        "displayInAddView": true,
+                        "helpText": null
+                    },
+                    "property": "online",
+                    "entityProperty": "online"
+                },
+                "lastMod": {
+                    "class": "rocket\\script\\entity\\field\\impl\\date\\LastModScriptField",
+                    "label": "Last Mod",
+                    "props": {
+                        "readOnly": false,
+                        "displayInListView": true,
+                        "displayInDetailView": true,
+                        "optional": false,
+                        "draft": false,
+                        "translation": false,
+                        "dateStyle": "medium",
+                        "timeStyle": "short"
+                    },
+                    "property": "lastMod",
+                    "entityProperty": "lastMod"
+                }
+            },
+            "commands": {
+                "overview": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\ListScriptCommand",
+                    "props": {
+                        "numEntries": "30"
+                    }
+                },
+                "rocket-add": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\AddScriptCommand",
+                    "props": []
+                },
+                "detail": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\DetailScriptCommand",
+                    "props": []
+                },
+                "edit": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\EditScriptCommand",
+                    "props": []
+                },
+                "delete": {
+                    "class": "rocket\\script\\entity\\command\\impl\\common\\DeleteScriptCommand",
+                    "props": []
+                }
+            },
+            "constraints": [],
+            "listeners": [],
+            "defaultMaskId": null
+        }
+    }
+}
