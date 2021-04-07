@@ -1,15 +1,16 @@
 {
-    "specs": {
+    "types": {
         "slider-slider": {
-            "type": "entity",
+            "nature": "entity",
             "entity": "slider\\bo\\Slider",
             "dataSourceName": null,
             "label": "Slider",
             "pluralLabel": "Sliders",
+            "iconType": null,
             "identityStringPattern": "{name} [{id}]",
-            "fields": {
+            "props": {
                 "id": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\numeric\\IntegerEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
                     "props": {
                         "displayInOverview": false,
                         "displayInDetailView": true,
@@ -27,7 +28,7 @@
                     "entityProperty": "id"
                 },
                 "name": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -45,7 +46,7 @@
                     "entityProperty": "name"
                 },
                 "online": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\bool\\OnlineEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\bool\\OnlineEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -59,7 +60,7 @@
                     "entityProperty": "online"
                 },
                 "sliderImages": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\OneToManySelectEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\OneToManySelectEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -79,38 +80,41 @@
             },
             "commands": {
                 "overviewEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\OverviewEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\OverviewEiCommand",
                     "props": []
                 },
                 "detailEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\DetailEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DetailEiCommand",
                     "props": []
                 },
                 "editEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\EditEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\EditEiCommand",
                     "props": []
                 },
                 "addEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\AddEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\AddEiCommand",
                     "props": []
                 },
                 "deleteEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\DeleteEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DeleteEiCommand",
                     "props": []
                 }
             },
-            "defaultMaskId": null
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
         },
         "slider-slider-image": {
-            "type": "entity",
+            "nature": "entity",
             "entity": "slider\\bo\\SliderImage",
             "dataSourceName": null,
             "label": "Slider Image",
             "pluralLabel": "Slider Images",
+            "iconType": null,
             "identityStringPattern": "{title} [{id}]",
-            "fields": {
+            "props": {
                 "id": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\numeric\\IntegerEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
                     "props": {
                         "displayInOverview": false,
                         "displayInDetailView": true,
@@ -128,7 +132,7 @@
                     "entityProperty": "id"
                 },
                 "title": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -146,7 +150,7 @@
                     "entityProperty": "title"
                 },
                 "text": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\string\\StringEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -164,7 +168,7 @@
                     "entityProperty": "text"
                 },
                 "fileImage": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\file\\FileEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\file\\FileEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -184,7 +188,7 @@
                     "entityProperty": "fileImage"
                 },
                 "epageLink": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\EmbeddedOneToOneEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\EmbeddedOneToOneEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -203,7 +207,7 @@
                     "entityProperty": "pageLink"
                 },
                 "orderIndex": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\numeric\\OrderEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\OrderEiProp",
                     "props": {
                         "displayInOverview": false,
                         "displayInDetailView": false,
@@ -221,7 +225,7 @@
                     "entityProperty": "orderIndex"
                 },
                 "slider": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\ManyToOneSelectEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\ManyToOneSelectEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -241,7 +245,7 @@
                     "entityProperty": "slider"
                 },
                 "online": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\bool\\OnlineEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\bool\\OnlineEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -257,37 +261,40 @@
             },
             "commands": {
                 "overviewEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\OverviewEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\OverviewEiCommand",
                     "props": []
                 },
                 "detailEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\DetailEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DetailEiCommand",
                     "props": []
                 },
                 "editEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\EditEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\EditEiCommand",
                     "props": []
                 },
                 "addEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\AddEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\AddEiCommand",
                     "props": []
                 },
                 "deleteEiCommand": {
-                    "class": "rocket\\spec\\ei\\component\\command\\impl\\common\\DeleteEiCommand",
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DeleteEiCommand",
                     "props": []
                 }
             },
-            "defaultMaskId": null
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
         },
         "slider-slider-page-controller": {
-            "type": "entity",
+            "nature": "entity",
             "entity": "slider\\bo\\SliderPageController",
             "dataSourceName": null,
             "label": "Slider Page Controller",
             "pluralLabel": "Slider Page Controllers",
-            "fields": {
+            "iconType": null,
+            "props": {
                 "slider": {
-                    "class": "rocket\\spec\\ei\\component\\field\\impl\\relation\\ManyToOneSelectEiProp",
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\ManyToOneSelectEiProp",
                     "props": {
                         "displayInOverview": true,
                         "displayInDetailView": true,
@@ -308,11 +315,13 @@
                 }
             },
             "commands": [],
-            "defaultMaskId": null
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
         }
     },
-    "commonEiMasks": [],
-    "menuItems": {
+    "eiTypeExtensions": [],
+    "launchPads": {
         "slider-slider": []
     }
 }
