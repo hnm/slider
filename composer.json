@@ -12,7 +12,6 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
         "n2n/n2n-composer-module-installer": "^7.1",
         "n2n/page": "^1.5.12",
         "hnm/ch-hnm-util": "^7.2 || ^8",
